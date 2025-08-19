@@ -1,0 +1,253 @@
+/* Global Styles for Brose Films */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Brand Colors */
+  --primary-black: #000000;
+  --primary-gold: #FFD700;
+  --accent-gold: #FFA500;
+  --dark-gold: #B8860B;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-medium: #CCCCCC;
+  --gray-dark: #333333;
+  
+  /* Cinematic Colors */
+  --cinematic-blue: #1E3A8A;
+  --cinematic-purple: #6B46C1;
+  --film-grain: rgba(255, 255, 255, 0.02);
+  
+  /* Typography */
+  --font-cinematic: 'Cinzel', serif;
+  --font-modern: 'Inter', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 120px 0;
+  --container-padding: 0 2rem;
+  
+  /* Transitions */
+  --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.3s ease;
+  
+  /* Shadows */
+  --shadow-cinematic: 0 20px 60px rgba(255, 215, 0, 0.1);
+  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-modern);
+  background-color: var(--primary-black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-gold), var(--accent-gold));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-gold), var(--dark-gold));
+}
+
+/* Typography Classes */
+.cinematic-title {
+  font-family: var(--font-cinematic);
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--primary-gold), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+}
+
+.modern-text {
+  font-family: var(--font-modern);
+  font-weight: 400;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary-gold), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Styles */
+.btn-cinematic {
+  position: relative;
+  padding: 16px 32px;
+  background: linear-gradient(45deg, var(--primary-gold), var(--accent-gold));
+  color: var(--primary-black);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-modern);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-cinematic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: var(--transition-smooth);
+}
+
+.btn-cinematic:hover::before {
+  left: 100%;
+}
+
+.btn-cinematic:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cinematic);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-gold);
+  border: 2px solid var(--primary-gold);
+}
+
+.btn-outline:hover {
+  background: var(--primary-gold);
+  color: var(--primary-black);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* Film Grain Effect */
+.film-grain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, transparent 20%, var(--film-grain) 21%, var(--film-grain) 34%, transparent 35%, transparent),
+    linear-gradient(0deg, transparent 24%, var(--film-grain) 25%, var(--film-grain) 26%, transparent 27%, transparent 74%, var(--film-grain) 75%, var(--film-grain) 76%, transparent 77%, transparent);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Cinematic Glow */
+.cinematic-glow {
+  position: relative;
+}
+
+.cinematic-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--primary-gold) 0%, transparent 70%);
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px 0;
+    --container-padding: 0 1rem;
+  }
+  
+  .cinematic-title {
+    font-size: 2.5rem;
+  }
+  
+  .btn-cinematic {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+  
+  .cinematic-title {
+    font-size: 2rem;
+  }
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Parallax Base */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Transform Utilities */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
