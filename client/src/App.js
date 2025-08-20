@@ -50,33 +50,37 @@ function App() {
       <AppContainer>
         {isLoading && <LoadingScreen />}
         
-        <ScrollManager />
-        
-        <CanvasContainer>
-          <Canvas
-            camera={{ position: [0, 0, 5], fov: 75 }}
-            gl={{ 
-              antialias: true, 
-              alpha: true,
-              powerPreference: "high-performance"
-            }}
-          >
-            <Suspense fallback={null}>
-              {/* Background 3D elements will be added here */}
-            </Suspense>
-          </Canvas>
-        </CanvasContainer>
+        {!isLoading && (
+          <>
+            <ScrollManager />
+            
+            <CanvasContainer>
+              <Canvas
+                camera={{ position: [0, 0, 5], fov: 75 }}
+                gl={{ 
+                  antialias: true, 
+                  alpha: true,
+                  powerPreference: "high-performance"
+                }}
+              >
+                <Suspense fallback={null}>
+                  {/* Background 3D elements will be added here */}
+                </Suspense>
+              </Canvas>
+            </CanvasContainer>
 
-        <Navigation />
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/subsidiaries" element={<Subsidiaries />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+            <Navigation />
+            
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/subsidiaries" element={<Subsidiaries />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </>
+        )}
       </AppContainer>
     </Router>
   );
