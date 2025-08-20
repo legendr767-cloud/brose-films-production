@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import BroseLogo from '../../assets/images/brose-logo.svg';
 
 // const fadeOut = keyframes`
 //   0% { opacity: 1; }
@@ -53,22 +54,14 @@ const LogoContainer = styled(motion.div)`
   text-align: center;
 `;
 
-const MainLogo = styled(motion.h1)`
-  font-family: 'Cinzel', serif;
-  font-size: 4rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
-  letter-spacing: 4px;
+const MainLogoImage = styled(motion.img)`
+  height: 120px;
+  width: auto;
+  filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
   margin-bottom: 1rem;
   
   @media (max-width: 768px) {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    height: 80px;
   }
 `;
 
@@ -194,13 +187,13 @@ const LoadingScreen = () => {
         />
 
         <LogoContainer>
-          <MainLogo
+          <MainLogoImage
+            src={BroseLogo}
+            alt="Brose Films Production"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-          >
-            BROSE FILMS
-          </MainLogo>
+          />
           
           <Tagline
             initial={{ y: 20, opacity: 0 }}

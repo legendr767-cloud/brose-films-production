@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import BroseLogo from '../../assets/images/brose-logo.svg';
 
 const NavContainer = styled(motion.nav)`
   position: fixed;
@@ -29,25 +30,23 @@ const NavContent = styled.div`
 `;
 
 const Logo = styled(Link)`
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #FFD700, #FFA500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 2px;
   transition: all 0.3s ease;
   
   &:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
   }
+`;
+
+const LogoImage = styled.img`
+  height: 50px;
+  width: auto;
   
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    height: 40px;
   }
 `;
 
@@ -184,7 +183,9 @@ const Navigation = () => {
         transition={{ duration: 0.6, delay: 3.5 }}
       >
         <NavContent>
-          <Logo to="/">BROSE FILMS PRODUCTION</Logo>
+          <Logo to="/">
+            <LogoImage src={BroseLogo} alt="Brose Films Production" />
+          </Logo>
           
           <NavLinks>
             {navItems.map((item) => (
