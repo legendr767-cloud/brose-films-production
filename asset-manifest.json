@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/brose-films-production/static/css/main.23323581.css",
+    "main.js": "/brose-films-production/static/js/main.b64ad8ed.js",
+    "index.html": "/brose-films-production/index.html",
+    "static/media/brose-logo.svg": "/brose-films-production/static/media/brose-logo.1e07a1efc0558102c75278ce6e9c53ac.svg",
+    "main.23323581.css.map": "/brose-films-production/static/css/main.23323581.css.map",
+    "main.b64ad8ed.js.map": "/brose-films-production/static/js/main.b64ad8ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23323581.css",
+    "static/js/main.b64ad8ed.js"
+  ]
+}
