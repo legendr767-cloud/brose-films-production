@@ -33,7 +33,8 @@ const ScrollManager = () => {
     // Cleanup
     return () => {
       lenis.destroy();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      // Don't kill all ScrollTriggers globally - let individual components manage their own
+      ScrollTrigger.refresh();
     };
   }, []);
 
