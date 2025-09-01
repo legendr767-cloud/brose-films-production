@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 import HeroScene from '../../../components/3D/HeroScene';
 
 const HeroContainer = styled.section`
@@ -227,6 +228,7 @@ const HeroScene3D = styled.div`
 
 const HeroSection = () => {
   const heroRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -249,6 +251,9 @@ const HeroSection = () => {
       behavior: 'smooth'
     });
   };
+
+  const goToPortfolio = () => navigate('/portfolio');
+  const goToContact = () => navigate('/contact');
 
   return (
     <HeroContainer ref={heroRef}>
@@ -283,6 +288,7 @@ const HeroSection = () => {
           <PrimaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={goToPortfolio}
           >
             View Our Work
           </PrimaryButton>
@@ -290,6 +296,7 @@ const HeroSection = () => {
           <SecondaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={goToContact}
           >
             Start a Project
           </SecondaryButton>

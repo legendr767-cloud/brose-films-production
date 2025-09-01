@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import styled from 'styled-components';
 
@@ -36,21 +36,15 @@ const CanvasContainer = styled.div`
 // Component to handle automatic navigation after loading
 function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     // Simulate loading time for dramatic effect
     const timer = setTimeout(() => {
       setIsLoading(false);
-      // Always navigate to home after loading to ensure content is visible
-      setTimeout(() => {
-        navigate('/', { replace: true });
-      }, 100); // Small delay to ensure DOM is ready
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, []);
 
   return (
     <AppContainer>
@@ -93,8 +87,13 @@ function AppContent() {
 }
 
 function App() {
+  // Use GitHub Pages basename only when hosted on github.io
+  const basename = typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')
+    ? '/brose-films-production'
+    : undefined;
+
   return (
-    <Router basename="/brose-films-production">
+    <Router basename={basename}>
       <AppContent />
     </Router>
   );
