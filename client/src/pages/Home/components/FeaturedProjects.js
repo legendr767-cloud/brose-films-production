@@ -245,7 +245,7 @@ const FeaturedProjects = () => {
             category: 'Feature Film',
             client: 'Brose Films Production',
             year: 2025,
-            image: '/assets/images/jacobs-trait-poster.jpg'
+            image: '/brose-films-production/assets/images/jacobs-trait-poster.jpg'
           },
           {
             id: 2,
@@ -254,7 +254,7 @@ const FeaturedProjects = () => {
             category: 'Feature Film',
             client: 'Brose Films Production',
             year: 2025,
-            image: '/assets/images/wrong-right-poster.jpg'
+            image: '/brose-films-production/assets/images/wrong-right-poster.jpg'
           }
         ]);
       }
