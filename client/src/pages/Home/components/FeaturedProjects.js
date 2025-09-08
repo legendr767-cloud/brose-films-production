@@ -95,6 +95,9 @@ const ProjectImage = styled.div`
   width: 100%;
   height: 60%;
   background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+  background-image: ${props => props.image ? `url(${props.image})` : 'none'};
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,7 +232,7 @@ const FeaturedProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('/api/projects?featured=true&limit=4');
+        const response = await axios.get('/api/projects?featured=true&limit=2');
         setProjects(response.data);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -237,35 +240,21 @@ const FeaturedProjects = () => {
         setProjects([
           {
             id: 1,
-            title: 'The Last Frontier',
-            description: 'Epic adventure film showcasing breathtaking landscapes',
+            title: "JACOB's TRAIT",
+            description: 'A captivating drama exploring complex human relationships and personal growth',
             category: 'Feature Film',
-            client: 'Independent',
-            year: 2023
+            client: 'Brose Films Production',
+            year: 2025,
+            image: '/assets/images/jacobs-trait-poster.jpg'
           },
           {
             id: 2,
-            title: 'Brand Revolution',
-            description: 'Award-winning commercial campaign for luxury automotive',
-            category: 'Commercial',
-            client: 'Luxury Auto Corp',
-            year: 2023
-          },
-          {
-            id: 3,
-            title: 'Digital Dreams',
-            description: 'Innovative web series exploring future technology',
-            category: 'Web Series',
-            client: 'Tech Innovators',
-            year: 2023
-          },
-          {
-            id: 4,
-            title: 'Corporate Vision',
-            description: 'Professional corporate video series',
-            category: 'Corporate',
-            client: 'Fortune 500 Company',
-            year: 2022
+            title: 'WRONG RIGHT',
+            description: 'An intriguing story that challenges perceptions of right and wrong',
+            category: 'Feature Film',
+            client: 'Brose Films Production',
+            year: 2025,
+            image: '/assets/images/wrong-right-poster.jpg'
           }
         ]);
       }
@@ -345,8 +334,8 @@ const FeaturedProjects = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <ProjectImage>
-                {getCategoryIcon(project.category)}
+              <ProjectImage image={project.image}>
+                {!project.image && getCategoryIcon(project.category)}
               </ProjectImage>
               
               <ProjectContent>

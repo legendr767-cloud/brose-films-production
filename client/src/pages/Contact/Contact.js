@@ -1,7 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import { motion } from 'framer-motion';
+import axios from 'axios';
+import YouTubeIcon from '../../assets/images/youtube-icon.svg';
+import FacebookIcon from '../../assets/images/facebook-icon.svg';
+import InstagramIcon from '../../assets/images/instagram-icon.svg';
 
 const Page = styled.div`
   position: relative;
@@ -131,6 +134,42 @@ const InfoItem = styled.div`
   &:last-child { border-bottom: 0; }
 `;
 
+const SocialLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+const SocialLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #FFD700;
+  }
+  
+  &:last-child {
+    border-bottom: 0;
+  }
+`;
+
+const SocialIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+  
+  ${SocialLink}:hover & {
+    filter: brightness(1);
+  }
+`;
+
 const Contact = () => {
   const pageRef = useRef(null);
   const [form, setForm] = useState({ name: '', email: '', company: '', subject: '', message: '' });
@@ -234,7 +273,20 @@ const Contact = () => {
             <InfoItem>+2348136653720</InfoItem>
 
             <h3 style={{ marginTop: 24, color: '#fff' }}>Social</h3>
-            <InfoItem>@brosefilms</InfoItem>
+            <SocialLinks>
+              <SocialLink href="https://youtube.com/@brosefilmsproductions" target="_blank" rel="noopener noreferrer">
+                <SocialIcon src={YouTubeIcon} alt="YouTube" />
+                <span>@brosefilmsproductions</span>
+              </SocialLink>
+              <SocialLink href="https://facebook.com/brosefilmsproductions" target="_blank" rel="noopener noreferrer">
+                <SocialIcon src={FacebookIcon} alt="Facebook" />
+                <span>@brosefilmsproductions</span>
+              </SocialLink>
+              <SocialLink href="https://instagram.com/brosefilmsproductions" target="_blank" rel="noopener noreferrer">
+                <SocialIcon src={InstagramIcon} alt="Instagram" />
+                <span>@brosefilmsproductions</span>
+              </SocialLink>
+            </SocialLinks>
           </Card>
         </Content>
       </Container>

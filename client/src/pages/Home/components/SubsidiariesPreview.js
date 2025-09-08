@@ -122,45 +122,6 @@ const EstablishedYear = styled.div`
   font-style: italic;
 `;
 
-const ViewAllButton = styled(motion.button)`
-  display: block;
-  margin: 60px auto 0;
-  padding: 16px 32px;
-  background: transparent;
-  color: #FFD700;
-  border: 2px solid #FFD700;
-  border-radius: 50px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #FFD700;
-    transition: width 0.3s ease;
-    z-index: -1;
-  }
-  
-  &:hover::before {
-    width: 100%;
-  }
-  
-  &:hover {
-    color: #000000;
-    transform: translateY(-2px);
-  }
-`;
 
 const BackgroundElements = styled.div`
   position: absolute;
