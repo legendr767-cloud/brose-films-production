@@ -261,7 +261,6 @@ const HeroSection = () => {
     });
   };
 
-  const goToPortfolio = () => navigate('/portfolio');
   const goToContact = () => navigate('/contact');
 
   return (
@@ -297,9 +296,9 @@ const HeroSection = () => {
           <PrimaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={goToPortfolio}
+            onClick={goToContact}
           >
-            View Our Work
+            Start Your Project
           </PrimaryButton>
           
           <SecondaryButton

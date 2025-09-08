@@ -322,7 +322,7 @@ const FeaturedProjects = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Discover our award-winning portfolio of films, commercials, and media productions that have captivated audiences worldwide.
+            Discover our award-winning films, commercials, and media productions that have captivated audiences worldwide.
           </SectionSubtitle>
         </SectionHeader>
 
