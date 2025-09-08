@@ -172,7 +172,7 @@ const StorySection = () => {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <VisualIcon>🎭</VisualIcon>
+            <VisualIcon>BROSE FILMS</VisualIcon>
           </StoryVisual>
         </StoryGrid>
         
@@ -183,7 +183,7 @@ const StorySection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <StatNumber>500+</StatNumber>
+            <StatNumber>176+</StatNumber>
             <StatLabel>Projects Completed</StatLabel>
           </StatItem>
           
@@ -193,7 +193,7 @@ const StorySection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <StatNumber>50+</StatNumber>
+            <StatNumber>12+</StatNumber>
             <StatLabel>Awards Won</StatLabel>
           </StatItem>
           
@@ -203,7 +203,7 @@ const StorySection = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <StatNumber>25+</StatNumber>
+            <StatNumber>10+</StatNumber>
             <StatLabel>Years Experience</StatLabel>
           </StatItem>
         </Stats>

@@ -183,34 +183,34 @@ const TimelineSection = () => {
 
   const milestones = [
     {
-      year: '1998',
+      year: '2014',
       title: 'The Beginning',
-      description: 'Brose Films was founded with a vision to create compelling visual narratives that resonate with global audiences.'
+      description: 'Brose Films was founded in Lagos, Nigeria with a vision to create compelling visual narratives that resonate with global audiences.'
     },
     {
-      year: '2003',
+      year: '2016',
       title: 'First Major Success',
-      description: 'Our breakthrough film "Echoes of Tomorrow" won three international awards and established our reputation in the industry.'
-    },
-    {
-      year: '2008',
-      title: 'Global Expansion',
-      description: 'Opened offices in Los Angeles and London, expanding our reach to serve clients across multiple continents.'
-    },
-    {
-      year: '2012',
-      title: 'Digital Revolution',
-      description: 'Pioneered the use of cutting-edge digital cinematography and post-production techniques in our workflow.'
+      description: 'Our breakthrough film "JACOB\'s TRAIT" won multiple awards and established our reputation in the Nigerian film industry.'
     },
     {
       year: '2018',
-      title: 'Subsidiary Network',
-      description: 'Launched our network of specialized subsidiaries, each focusing on different aspects of media production.'
+      title: 'Lagos Expansion',
+      description: 'Expanded our Lagos operations with state-of-the-art production facilities and equipment to serve clients across Nigeria.'
     },
     {
-      year: '2023',
+      year: '2020',
+      title: 'Digital Revolution',
+      description: 'Pioneered the use of cutting-edge digital cinematography and post-production techniques in our Lagos studio.'
+    },
+    {
+      year: '2022',
+      title: 'Production Excellence',
+      description: 'Achieved milestone of 176+ completed projects, establishing ourselves as a leading production house in Lagos.'
+    },
+    {
+      year: '2024',
       title: 'Innovation Leadership',
-      description: 'Leading the industry with AI-enhanced production techniques and immersive storytelling technologies.'
+      description: 'Leading the Nigerian film industry with advanced production techniques and award-winning storytelling from our Lagos headquarters.'
     }
   ];
 

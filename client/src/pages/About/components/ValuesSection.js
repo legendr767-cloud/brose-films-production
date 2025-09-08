@@ -111,6 +111,16 @@ const ValuesSection = () => {
       icon: "🎯",
       title: "Audience Engagement",
       description: "We prioritize audience satisfaction, crafting stories that resonate, inspire, and leave a lasting impact."
+    },
+    {
+      icon: "🚀",
+      title: "Innovation",
+      description: "We embrace cutting-edge technology and pioneering techniques to push the boundaries of cinematic storytelling."
+    },
+    {
+      icon: "🌍",
+      title: "Cultural Impact",
+      description: "We create content that transcends borders, celebrating diversity and fostering global understanding through powerful narratives."
     }
   ];
 
