@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import axios from 'axios';
 
@@ -186,6 +187,7 @@ const FloatingCircle = styled(motion.div)`
 const ServicesPreview = () => {
   const [services, setServices] = useState([]);
   const sectionRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -200,25 +202,29 @@ const ServicesPreview = () => {
             id: 1,
             title: 'Film Production',
             description: 'Full-scale cinematic productions from concept to final cut with state-of-the-art equipment and award-winning talent.',
-            icon: '🎬'
+            icon: '🎬',
+            slug: 'film-production'
           },
           {
             id: 2,
             title: 'Creative Advertising',
             description: 'Compelling commercial content that drives engagement and builds lasting brand connections with your audience.',
-            icon: '📢'
+            icon: '📢',
+            slug: 'creative-advertising'
           },
           {
             id: 3,
             title: 'Content Strategy',
             description: 'Strategic content planning and brand storytelling that resonates with your target market and achieves business goals.',
-            icon: '📋'
+            icon: '📋',
+            slug: 'content-strategy'
           },
           {
             id: 4,
             title: 'Media Solutions',
             description: 'Comprehensive media production and distribution services for digital platforms and traditional broadcasting.',
-            icon: '📡'
+            icon: '📡',
+            slug: 'media-solutions'
           }
         ]);
       }
@@ -327,7 +333,7 @@ const ServicesPreview = () => {
                   {service.description}
                 </ServiceDescription>
               </div>
-              <ServiceCTA>
+              <ServiceCTA onClick={() => navigate(`/services/${service.slug}`)}>
                 Learn More
               </ServiceCTA>
             </ServiceCard>

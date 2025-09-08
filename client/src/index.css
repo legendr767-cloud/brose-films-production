@@ -79,6 +79,8 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  text-align: center;
+  line-height: 1.2;
 }
 
 .modern-text {
@@ -96,19 +98,21 @@ body {
 /* Button Styles */
 .btn-cinematic {
   position: relative;
-  padding: 16px 32px;
+  padding: 14px 28px;
   background: linear-gradient(45deg, var(--primary-gold), var(--accent-gold));
   color: var(--primary-black);
   border: none;
   border-radius: 8px;
   font-family: var(--font-modern);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: var(--transition-smooth);
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-width: 160px;
+  text-align: center;
 }
 
 .btn-cinematic::before {
@@ -202,12 +206,13 @@ body {
   }
   
   .cinematic-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .btn-cinematic {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    min-width: 140px;
   }
 }
 

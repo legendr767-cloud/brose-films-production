@@ -21,23 +21,28 @@ const HeroContent = styled.div`
 
 const HeroTitle = styled(motion.h1)`
   font-family: 'Cinzel', serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
   background: linear-gradient(45deg, #FFD700, #FFA500);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 2rem;
-  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
 `;
 
 const HeroSubtitle = styled(motion.p)`
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: #CCCCCC;
   line-height: 1.6;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
 `;
 
 const FilmGrain = styled.div`

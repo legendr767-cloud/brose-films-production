@@ -225,13 +225,13 @@ const Contact = () => {
 
           <Card initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.6 }}>
             <h3 style={{ marginTop: 0, color: '#fff' }}>Studios</h3>
-            <InfoItem>Los Angeles, CA</InfoItem>
+            <InfoItem>Lagos, Nigeria</InfoItem>
             <InfoItem>London, UK</InfoItem>
             <InfoItem>Accra, GH</InfoItem>
 
             <h3 style={{ marginTop: 24, color: '#fff' }}>Business</h3>
-            <InfoItem>hello@brosefilms.com</InfoItem>
-            <InfoItem>+1 (555) 012-3456</InfoItem>
+            <InfoItem>info@brosefilmsproduction.com</InfoItem>
+            <InfoItem>+2348136653720</InfoItem>
 
             <h3 style={{ marginTop: 24, color: '#fff' }}>Social</h3>
             <InfoItem>@brosefilms</InfoItem>

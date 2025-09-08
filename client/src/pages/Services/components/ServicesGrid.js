@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import axios from 'axios';
 
@@ -192,6 +193,7 @@ const ServiceCTA = styled(motion.button)`
 const ServicesGridComponent = () => {
   const [services, setServices] = useState([]);
   const sectionRef = useRef();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -207,6 +209,7 @@ const ServicesGridComponent = () => {
             title: 'Film Production',
             description: 'Full-scale cinematic productions from concept to final cut with state-of-the-art equipment and award-winning talent.',
             icon: '🎬',
+            slug: 'film-production',
             features: ['Pre-production Planning', 'Principal Photography', 'Post-production', 'Color Grading', 'Sound Design']
           },
           {
@@ -214,6 +217,7 @@ const ServicesGridComponent = () => {
             title: 'Creative Advertising',
             description: 'Compelling commercial content that drives engagement and builds lasting brand connections with your audience.',
             icon: '📢',
+            slug: 'creative-advertising',
             features: ['Brand Strategy', 'Creative Concepts', 'Commercial Production', 'Digital Campaigns', 'Social Media Content']
           },
           {
@@ -221,6 +225,7 @@ const ServicesGridComponent = () => {
             title: 'Content Strategy',
             description: 'Strategic content planning and brand storytelling that resonates with your target market and achieves business goals.',
             icon: '📋',
+            slug: 'content-strategy',
             features: ['Content Planning', 'Brand Storytelling', 'Audience Analysis', 'Distribution Strategy', 'Performance Analytics']
           },
           {
@@ -228,6 +233,7 @@ const ServicesGridComponent = () => {
             title: 'Media Solutions',
             description: 'Comprehensive media production and distribution services for digital platforms and traditional broadcasting.',
             icon: '📡',
+            slug: 'media-solutions',
             features: ['Live Streaming', 'Broadcast Production', 'Digital Distribution', 'Platform Optimization', 'Technical Support']
           },
           {
@@ -235,6 +241,7 @@ const ServicesGridComponent = () => {
             title: 'Documentary Production',
             description: 'Authentic documentary storytelling that captures real stories with compelling narrative and visual excellence.',
             icon: '📹',
+            slug: 'documentary-production',
             features: ['Research & Development', 'Interview Production', 'Archival Integration', 'Narrative Structure', 'Festival Preparation']
           },
           {
@@ -242,6 +249,7 @@ const ServicesGridComponent = () => {
             title: 'Animation & VFX',
             description: 'Cutting-edge animation and visual effects that bring impossible worlds and characters to life.',
             icon: '🎨',
+            slug: 'animation-vfx',
             features: ['2D/3D Animation', 'Visual Effects', 'Motion Graphics', 'Character Design', 'Compositing']
           }
         ]);
@@ -321,6 +329,7 @@ const ServicesGridComponent = () => {
               <ServiceCTA
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate(`/services/${service.slug}`)}
               >
                 Learn More
               </ServiceCTA>

@@ -25,7 +25,7 @@ const HeroContent = styled.div`
 
 const MainTitle = styled(motion.h1)`
   font-family: 'Cinzel', serif;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   font-weight: 700;
   background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
   background-size: 200% 200%;
@@ -33,29 +33,36 @@ const MainTitle = styled(motion.h1)`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
-  letter-spacing: 4px;
-  margin-bottom: 2rem;
-  line-height: 1.1;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-align: center;
   
   @media (max-width: 768px) {
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 4rem);
   }
 `;
 
 const Tagline = styled(motion.p)`
   font-family: 'Inter', sans-serif;
-  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
   color: #CCCCCC;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   opacity: 0.9;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   
   @media (max-width: 768px) {
     letter-spacing: 1px;
     margin-bottom: 2rem;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
   }
 `;
 
@@ -73,20 +80,21 @@ const CTAContainer = styled(motion.div)`
 `;
 
 const PrimaryButton = styled(motion.button)`
-  padding: 18px 40px;
+  padding: 16px 32px;
   background: linear-gradient(45deg, #FFD700, #FFA500);
   color: #000000;
   border: none;
   border-radius: 50px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  min-width: 180px;
   
   &::before {
     content: '';
@@ -110,20 +118,21 @@ const PrimaryButton = styled(motion.button)`
 `;
 
 const SecondaryButton = styled(motion.button)`
-  padding: 18px 40px;
+  padding: 16px 32px;
   background: transparent;
   color: #FFD700;
   border: 2px solid #FFD700;
   border-radius: 50px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  min-width: 180px;
   
   &::before {
     content: '';
