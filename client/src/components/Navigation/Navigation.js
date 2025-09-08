@@ -167,7 +167,6 @@ const Navigation = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
-    { path: '/portfolio', label: 'Portfolio' },
     { path: '/subsidiaries', label: 'Subsidiaries' },
     { path: '/contact', label: 'Contact' }
   ];

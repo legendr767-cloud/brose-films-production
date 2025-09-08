@@ -12,7 +12,6 @@ import ScrollManager from './components/ScrollManager/ScrollManager';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Services from './pages/Services/Services';
-import Portfolio from './pages/Portfolio/Portfolio';
 import Subsidiaries from './pages/Subsidiaries/Subsidiaries';
 import Contact from './pages/Contact/Contact';
 import ServiceBlog from './pages/Blog/ServiceBlog';
@@ -77,7 +76,6 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:serviceSlug" element={<ServiceBlog />} />
-            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/subsidiaries" element={<Subsidiaries />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace />} />

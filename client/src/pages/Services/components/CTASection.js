@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const CTAContainer = styled.section`
   position: relative;
@@ -141,6 +142,12 @@ const BackgroundGlow = styled.div`
 `;
 
 const CTASection = () => {
+  const navigate = useNavigate();
+
+  const handleStartProject = () => {
+    navigate('/contact');
+  };
+
   return (
     <CTAContainer>
       <BackgroundGlow />
@@ -173,16 +180,10 @@ const CTASection = () => {
           <PrimaryButton
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleStartProject}
           >
             Start Your Project
           </PrimaryButton>
-          
-          <SecondaryButton
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Portfolio
-          </SecondaryButton>
         </CTAButtons>
       </Container>
     </CTAContainer>
