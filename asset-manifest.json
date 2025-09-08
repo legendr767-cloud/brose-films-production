@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/brose-films-production/static/css/main.23323581.css",
-    "main.js": "/brose-films-production/static/js/main.84eef26f.js",
+    "main.css": "/brose-films-production/static/css/main.9405e0b9.css",
+    "main.js": "/brose-films-production/static/js/main.bb225ae4.js",
     "index.html": "/brose-films-production/index.html",
     "static/media/brose-logo.svg": "/brose-films-production/static/media/brose-logo.1e07a1efc0558102c75278ce6e9c53ac.svg",
-    "main.23323581.css.map": "/brose-films-production/static/css/main.23323581.css.map",
-    "main.84eef26f.js.map": "/brose-films-production/static/js/main.84eef26f.js.map"
+    "static/media/brose-logo-circle.svg": "/brose-films-production/static/media/brose-logo-circle.d16c4418ed8a2610b16ac927aff49ae4.svg",
+    "main.9405e0b9.css.map": "/brose-films-production/static/css/main.9405e0b9.css.map",
+    "main.bb225ae4.js.map": "/brose-films-production/static/js/main.bb225ae4.js.map"
   },
   "entrypoints": [
-    "static/css/main.23323581.css",
-    "static/js/main.84eef26f.js"
+    "static/css/main.9405e0b9.css",
+    "static/js/main.bb225ae4.js"
   ]
 }
