@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import BroseLogo from '../../assets/images/navbar-logo-optimized.jpg';
+import BroseLogo from '../../assets/images/brose-navbar-logo.jpg';
 
 const NavContainer = styled(motion.nav)`
   position: fixed;
