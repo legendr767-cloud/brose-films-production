@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import logoImage from '../../../assets/images/logo.jpg';
 
 const HeroContainer = styled.section`
   position: relative;
@@ -17,6 +18,21 @@ const HeroContent = styled.div`
   max-width: 900px;
   padding: 0 2rem;
   z-index: 10;
+`;
+
+const LogoContainer = styled(motion.div)`
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+`;
+
+const Logo = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
 `;
 
 const HeroTitle = styled(motion.h1)`
@@ -78,6 +94,14 @@ const HeroSection = () => {
       <FilmGrain />
       
       <HeroContent>
+        <LogoContainer
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+        >
+          <Logo src={logoImage} alt="Brose Films Production Logo" />
+        </LogoContainer>
+        
         <HeroTitle
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

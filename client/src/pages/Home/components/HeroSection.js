@@ -300,14 +300,6 @@ const HeroSection = () => {
           >
             Start Your Project
           </PrimaryButton>
-          
-          <SecondaryButton
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={goToContact}
-          >
-            Start a Project
-          </SecondaryButton>
         </CTAContainer>
       </HeroContent>
 

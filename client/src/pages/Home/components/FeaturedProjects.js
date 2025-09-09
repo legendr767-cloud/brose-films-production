@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import axios from 'axios';
+import jacobsTraitImage from '../../../assets/images/jacobs-trait.jpeg';
+import wrongRightImage from '../../../assets/images/wrong-right.jpeg';
 
 const ProjectsSection = styled.section`
   position: relative;
@@ -245,7 +247,7 @@ const FeaturedProjects = () => {
             category: 'Feature Film',
             client: 'Brose Films Production',
             year: 2025,
-            image: '/brose-films-production/assets/images/jacobs-trait-poster.jpg'
+            image: jacobsTraitImage
           },
           {
             id: 2,
@@ -254,7 +256,7 @@ const FeaturedProjects = () => {
             category: 'Feature Film',
             client: 'Brose Films Production',
             year: 2025,
-            image: '/brose-films-production/assets/images/wrong-right-poster.jpg'
+            image: wrongRightImage
           }
         ]);
       }

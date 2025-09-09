@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import davidAmoreImage from '../../../assets/images/david-amore.png';
+import raphNiyiImage from '../../../assets/images/raph-niyi.png';
+import omodasolaAsubiaroImage from '../../../assets/images/omodasola-asubiaro.png';
+import deborahBlessingImage from '../../../assets/images/deborah-blessing.png';
 
 const TeamContainer = styled.section`
   position: relative;
@@ -88,6 +92,7 @@ const TeamAvatar = styled.div`
   justify-content: center;
   font-size: 3rem;
   position: relative;
+  overflow: hidden;
   
   &::after {
     content: '';
@@ -106,6 +111,13 @@ const TeamAvatar = styled.div`
   ${TeamCard}:hover &::after {
     opacity: 0.3;
   }
+`;
+
+const TeamPhoto = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 `;
 
 const TeamName = styled.h3`
@@ -137,28 +149,28 @@ const TeamBio = styled.p`
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: 'Michael Brose',
-      position: 'Founder & CEO',
-      bio: 'Visionary leader with 25+ years in film production, driving innovation and creative excellence.',
-      avatar: '🎬'
+      name: 'David S. Amore',
+      position: 'Creative Advisor',
+      bio: 'Visionary creative advisor bringing innovative perspectives and artistic excellence to every project.',
+      photo: davidAmoreImage
     },
     {
-      name: 'Sarah Chen',
-      position: 'Creative Director',
-      bio: 'Award-winning director known for groundbreaking visual storytelling and cinematic artistry.',
-      avatar: '🎭'
+      name: 'Raph Niyi',
+      position: 'Production Coordinator',
+      bio: 'Expert production coordinator ensuring seamless execution and coordination across all projects.',
+      photo: raphNiyiImage
     },
     {
-      name: 'David Rodriguez',
-      position: 'Head of Production',
-      bio: 'Industry veteran managing complex productions with precision and creative vision.',
-      avatar: '🎪'
+      name: 'Omodasola Asubiaro',
+      position: 'Production Manager',
+      bio: 'Experienced production manager overseeing complex productions with precision and creative vision.',
+      photo: omodasolaAsubiaroImage
     },
     {
-      name: 'Emma Thompson',
-      position: 'VP of Strategy',
-      bio: 'Strategic mastermind developing innovative approaches to content creation and distribution.',
-      avatar: '📊'
+      name: 'Deborah Blessing',
+      position: 'Public Relations',
+      bio: 'Strategic public relations specialist building strong connections and managing brand communications.',
+      photo: deborahBlessingImage
     }
   ];
 
@@ -194,7 +206,7 @@ const TeamSection = () => {
               whileHover={{ scale: 1.02 }}
             >
               <TeamAvatar>
-                {member.avatar}
+                <TeamPhoto src={member.photo} alt={member.name} />
               </TeamAvatar>
               <TeamName>{member.name}</TeamName>
               <TeamPosition>{member.position}</TeamPosition>
