@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import BroseLogo from '../../assets/images/brose-logo-circle.svg';
+import BroseLogo from '../../assets/images/navbar-logo-optimized.jpg';
 
 const NavContainer = styled(motion.nav)`
   position: fixed;
@@ -43,10 +43,14 @@ const Logo = styled(Link)`
 
 const LogoImage = styled.img`
   height: 50px;
-  width: auto;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FFD700;
   
   @media (max-width: 768px) {
     height: 40px;
+    width: 40px;
   }
 `;
 
