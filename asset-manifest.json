@@ -1,7 +1,14 @@
 {
   "files": {
     "main.css": "/brose-films-production/static/css/main.9405e0b9.css",
-    "main.js": "/brose-films-production/static/js/main.b3d9df67.js",
+    "main.js": "/brose-films-production/static/js/main.d65094eb.js",
+    "static/media/omodasola-asubiaro.png": "/brose-films-production/static/media/omodasola-asubiaro.3c8952455a91b1dba6aa.png",
+    "static/media/david-amore.png": "/brose-films-production/static/media/david-amore.f79d187dc36885087f6d.png",
+    "static/media/deborah-blessing.png": "/brose-films-production/static/media/deborah-blessing.5518895e3ba33b2f8d7a.png",
+    "static/media/raph-niyi.png": "/brose-films-production/static/media/raph-niyi.64359df7f379e3f9c312.png",
+    "static/media/logo.jpg": "/brose-films-production/static/media/logo.ba43cedaf69722499e4b.jpg",
+    "static/media/jacobs-trait.jpeg": "/brose-films-production/static/media/jacobs-trait.e686bfcd323b3a5678cb.jpeg",
+    "static/media/wrong-right.jpeg": "/brose-films-production/static/media/wrong-right.29d5de0a62a93b1d0b05.jpeg",
     "index.html": "/brose-films-production/index.html",
     "static/media/instagram-icon.svg": "/brose-films-production/static/media/instagram-icon.3cde8d429fc829868800703373c28b9d.svg",
     "static/media/brose-logo.svg": "/brose-films-production/static/media/brose-logo.1e07a1efc0558102c75278ce6e9c53ac.svg",
@@ -9,10 +16,10 @@
     "static/media/youtube-icon.svg": "/brose-films-production/static/media/youtube-icon.312923acc2fd41bb930039c39b018168.svg",
     "static/media/facebook-icon.svg": "/brose-films-production/static/media/facebook-icon.de62d776eedcf642f7f8d5bbf7e52457.svg",
     "main.9405e0b9.css.map": "/brose-films-production/static/css/main.9405e0b9.css.map",
-    "main.b3d9df67.js.map": "/brose-films-production/static/js/main.b3d9df67.js.map"
+    "main.d65094eb.js.map": "/brose-films-production/static/js/main.d65094eb.js.map"
   },
   "entrypoints": [
     "static/css/main.9405e0b9.css",
-    "static/js/main.b3d9df67.js"
+    "static/js/main.d65094eb.js"
   ]
 }
