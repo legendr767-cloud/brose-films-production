@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import davidAmoreImage from '../../../assets/images/david-amore.png';
-import raphNiyiImage from '../../../assets/images/raph-niyi.png';
-import omodasolaAsubiaroImage from '../../../assets/images/omodasola-asubiaro.png';
-import deborahBlessingImage from '../../../assets/images/deborah-blessing.png';
+import davidAmoreImage from '../../../assets/images/david-amore-optimized.jpg';
+import raphNiyiImage from '../../../assets/images/raph-niyi-optimized.jpg';
+import omodasolaAsubiaroImage from '../../../assets/images/omodasola-asubiaro-optimized.jpg';
+import deborahBlessingImage from '../../../assets/images/deborah-blessing-optimized.jpg';
 
 const TeamContainer = styled.section`
   position: relative;
@@ -118,6 +118,30 @@ const TeamPhoto = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition: opacity 0.3s ease;
+  
+  &.loading {
+    opacity: 0.5;
+  }
+  
+  &.loaded {
+    opacity: 1;
+  }
+`;
+
+const PhotoPlaceholder = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #333, #555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const TeamName = styled.h3`
@@ -145,6 +169,54 @@ const TeamBio = styled.p`
   color: #CCCCCC;
   line-height: 1.6;
 `;
+
+// Lazy loading image component
+const LazyImage = ({ src, alt, className }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageInView, setImageInView] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  return (
+    <div ref={imgRef} style={{ position: 'relative', width: '100%', height: '100%' }}>
+      {!imageLoaded && (
+        <PhotoPlaceholder>
+          👤
+        </PhotoPlaceholder>
+      )}
+      {imageInView && (
+        <TeamPhoto
+          src={src}
+          alt={alt}
+          className={imageLoaded ? 'loaded' : 'loading'}
+          onLoad={handleImageLoad}
+          loading="lazy"
+        />
+      )}
+    </div>
+  );
+};
 
 const TeamSection = () => {
   const teamMembers = [
@@ -206,7 +278,7 @@ const TeamSection = () => {
               whileHover={{ scale: 1.02 }}
             >
               <TeamAvatar>
-                <TeamPhoto src={member.photo} alt={member.name} />
+                <LazyImage src={member.photo} alt={member.name} />
               </TeamAvatar>
               <TeamName>{member.name}</TeamName>
               <TeamPosition>{member.position}</TeamPosition>
