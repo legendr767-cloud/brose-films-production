@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import YouTubeIcon from '../../assets/images/youtube-icon.svg';
-import FacebookIcon from '../../assets/images/facebook-icon.svg';
 import InstagramIcon from '../../assets/images/instagram-icon.svg';
+import TikTokIcon from '../../assets/images/tiktok-icon.svg';
 
 const Page = styled.div`
   position: relative;
@@ -272,17 +272,17 @@ const Contact = () => {
 
             <h3 style={{ marginTop: 24, color: '#fff' }}>Social</h3>
             <SocialLinks>
-              <SocialLink href="https://youtube.com/@brosefilmsproductions" target="_blank" rel="noopener noreferrer">
+              <SocialLink href="https://www.youtube.com/@brosefilmsproduction" target="_blank" rel="noopener noreferrer">
                 <SocialIcon src={YouTubeIcon} alt="YouTube" />
-                <span>@brosefilmsproductions</span>
+                <span>@brosefilmsproduction</span>
               </SocialLink>
-              <SocialLink href="https://facebook.com/brosefilmsproductions" target="_blank" rel="noopener noreferrer">
-                <SocialIcon src={FacebookIcon} alt="Facebook" />
-                <span>@brosefilmsproductions</span>
-              </SocialLink>
-              <SocialLink href="https://instagram.com/brosefilmsproductions" target="_blank" rel="noopener noreferrer">
+              <SocialLink href="https://www.instagram.com/brosefilmsproduction?igsh=MW9uaDdhdHhjMTJiZg==" target="_blank" rel="noopener noreferrer">
                 <SocialIcon src={InstagramIcon} alt="Instagram" />
-                <span>@brosefilmsproductions</span>
+                <span>@brosefilmsproduction</span>
+              </SocialLink>
+              <SocialLink href="https://www.tiktok.com/@brosefilmsproduction?_t=ZS-8zkhnnShDBX&_r=1" target="_blank" rel="noopener noreferrer">
+                <SocialIcon src={TikTokIcon} alt="TikTok" />
+                <span>@brosefilmsproduction</span>
               </SocialLink>
             </SocialLinks>
           </Card>
