@@ -1,0 +1,9 @@
+{
+  "name": "brose-films-lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda functions for Brose Films contact form",
+  "main": "contact-handler.js",
+  "dependencies": {
+    "nodemailer": "^6.9.8"
+  }
+}

@@ -1,0 +1,25 @@
+service: brose-films-api
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    EMAIL_USER: brosefilmsproduction@gmail.com
+    EMAIL_PASS: ${env:EMAIL_PASS}
+
+functions:
+  contact:
+    handler: aws-lambda/contact-handler.handler
+    events:
+      - http:
+          path: api/contact
+          method: post
+          cors: true
+      - http:
+          path: api/contact
+          method: options
+          cors: true
+
+plugins:
+  - serverless-offline
