@@ -197,7 +197,7 @@ const Contact = () => {
     setSubmitting(true);
     setFeedback(null);
     try {
-      const { data } = await axios.post('/api/contact', form);
+      const { data } = await axios.post(process.env.REACT_APP_API_URL || '/api/contact', form);
       if (data?.success) {
         setFeedback({ type: 'success', message: 'Message sent. We\'ll get back to you shortly.' });
         setForm({ name: '', email: '', company: '', subject: '', message: '' });
