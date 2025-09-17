@@ -1,0 +1,26 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .circle-bg { fill: #FFD700; }
+      .logo-shape { fill: #333333; }
+    </style>
+  </defs>
+  
+  <!-- Circular background -->
+  <circle cx="100" cy="100" r="100" class="circle-bg"/>
+  
+  <!-- Letter B shape -->
+  <g class="logo-shape">
+    <!-- Vertical bar of B -->
+    <rect x="60" y="60" width="20" height="80" rx="2"/>
+    
+    <!-- Top curve of B -->
+    <circle cx="95" cy="80" r="15"/>
+    
+    <!-- Bottom curve of B -->
+    <circle cx="95" cy="120" r="15"/>
+    
+    <!-- Connecting line -->
+    <rect x="80" y="98" width="30" height="4" rx="2"/>
+  </g>
+</svg>
