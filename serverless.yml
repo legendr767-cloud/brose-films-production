@@ -6,11 +6,26 @@ provider:
   region: us-east-1
   environment:
     EMAIL_USER: brosefilmsproduction@gmail.com
-    EMAIL_PASS: ${env:EMAIL_PASS}
+    EMAIL_PASS: ${env:EMAIL_PASS, 'placeholder'}
+
+package:
+  patterns:
+    - 'lambda-minimal/**'
+    - '!node_modules/**'
+    - '!client/**'
+    - '!server/**'
+    - '!src/**'
+    - '!public/**'
+    - '!pictures/**'
+    - '!aws-lambda/**'
+    - '!.git/**'
+    - '!.serverless/**'
+    - '!*.zip'
+    - '!*.md'
 
 functions:
   contact:
-    handler: aws-lambda/contact-handler.handler
+    handler: lambda-minimal/index.handler
     events:
       - http:
           path: api/contact
@@ -20,6 +35,3 @@ functions:
           path: api/contact
           method: options
           cors: true
-
-plugins:
-  - serverless-offline
