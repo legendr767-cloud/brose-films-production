@@ -1,7 +1,7 @@
 {
   "name": "brose-films-production-client",
   "version": "1.0.0",
-  "homepage": "https://legendr767-cloud.github.io/brose-films-production",
+  "homepage": "https://brosefilmsproduction.com",
   "private": true,
   "dependencies": {
     "@react-three/fiber": "^8.15.12",

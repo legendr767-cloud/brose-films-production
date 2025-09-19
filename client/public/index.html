@@ -16,32 +16,6 @@
     
     <title>Brose Films Production - Transforming Lives, one Story at a time</title>
     
-    <!-- Single Page Apps for GitHub Pages -->
-    <script type="text/javascript">
-      // Enhanced SPA routing for GitHub Pages
-      (function(l) {
-        // Handle redirects from 404.html
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-        
-        // Only apply base path logic if we're on GitHub Pages domain
-        if (l.hostname === 'legendr767-cloud.github.io') {
-          var expectedBase = '/brose-films-production';
-          if (l.pathname === expectedBase || l.pathname === expectedBase + '/') {
-            // We're on the base path, this is correct
-          } else if (l.pathname.indexOf(expectedBase) !== 0) {
-            // We're not on the expected base path, redirect
-            window.location.replace(expectedBase + '/');
-          }
-        }
-      }(window.location))
-    </script>
     
     <style>
       * {
