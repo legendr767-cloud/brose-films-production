@@ -87,6 +87,7 @@ const PrimaryButton = styled(motion.button)`
   }
 `;
 
+/*
 const SecondaryButton = styled(motion.button)`
   padding: 18px 40px;
   background: transparent;
@@ -124,6 +125,7 @@ const SecondaryButton = styled(motion.button)`
     transform: translateY(-3px);
   }
 `;
+*/
 
 const BackgroundGlow = styled.div`
   position: absolute;

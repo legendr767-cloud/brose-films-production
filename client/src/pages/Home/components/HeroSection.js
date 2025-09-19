@@ -117,6 +117,7 @@ const PrimaryButton = styled(motion.button)`
   }
 `;
 
+/*
 const SecondaryButton = styled(motion.button)`
   padding: 16px 32px;
   background: transparent;
@@ -156,6 +157,7 @@ const SecondaryButton = styled(motion.button)`
     box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
   }
 `;
+*/
 
 const ScrollIndicator = styled(motion.div)`
   position: absolute;

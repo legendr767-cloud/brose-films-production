@@ -170,6 +170,7 @@ const ProjectYear = styled.span`
   font-style: italic;
 `;
 
+/*
 const ViewAllButton = styled(motion.button)`
   display: block;
   margin: 60px auto 0;
@@ -208,6 +209,7 @@ const ViewAllButton = styled(motion.button)`
     box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
   }
 `;
+*/
 
 const FilmStripDecoration = styled.div`
   position: absolute;
