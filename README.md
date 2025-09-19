@@ -130,3 +130,4 @@ This project is proprietary software developed for Brose Films Production.
 
 For support and customization requests, contact the development team.
 # GitHub Pages Deployment
+# DNS cleanup completed - TXT record removed
