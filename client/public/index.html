@@ -30,13 +30,15 @@
           );
         }
         
-        // Ensure we're on the correct base path
-        var expectedBase = '/brose-films-production';
-        if (l.pathname === expectedBase || l.pathname === expectedBase + '/') {
-          // We're on the base path, this is correct
-        } else if (l.pathname.indexOf(expectedBase) !== 0) {
-          // We're not on the expected base path, redirect
-          window.location.replace(expectedBase + '/');
+        // Only apply base path logic if we're on GitHub Pages domain
+        if (l.hostname === 'legendr767-cloud.github.io') {
+          var expectedBase = '/brose-films-production';
+          if (l.pathname === expectedBase || l.pathname === expectedBase + '/') {
+            // We're on the base path, this is correct
+          } else if (l.pathname.indexOf(expectedBase) !== 0) {
+            // We're not on the expected base path, redirect
+            window.location.replace(expectedBase + '/');
+          }
         }
       }(window.location))
     </script>
