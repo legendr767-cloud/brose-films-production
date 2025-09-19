@@ -87,13 +87,8 @@ function AppContent() {
 }
 
 function App() {
-  // Use GitHub Pages basename only when hosted on github.io
-  const basename = typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')
-    ? '/brose-films-production'
-    : undefined;
-
   return (
-    <Router basename={basename}>
+    <Router>
       <AppContent />
     </Router>
   );

@@ -4,40 +4,14 @@
     <meta charset="utf-8">
     <title>Brose Films Production</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // Enhanced version to handle all routing scenarios
-      
-      var l = window.location;
-      var pathSegmentsToKeep = 1; // For GitHub Pages project sites
-      
-      // Check if we're on the main domain or a specific route
-      var pathname = l.pathname;
-      var segments = pathname.split('/').filter(function(segment) {
-        return segment.length > 0;
-      });
-      
-      // If we have more than just the repo name, redirect with query parameter
-      if (segments.length > pathSegmentsToKeep) {
-        var redirectPath = segments.slice(pathSegmentsToKeep).join('/');
-        var newUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/' + segments.slice(0, pathSegmentsToKeep).join('/') + '/?/' + redirectPath +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash;
-        
-        l.replace(newUrl);
-      } else {
-        // If we're just on the base path, redirect to the main app
-        var baseUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/' + segments.slice(0, pathSegmentsToKeep).join('/') + '/';
-        l.replace(baseUrl);
-      }
-
+      // Simple redirect to home for custom domain
+      window.location.replace('/');
     </script>
   </head>
   <body>
     <div style="font-family: Arial, sans-serif; text-align: center; margin-top: 50px;">
       <h1>Redirecting to Brose Films Production...</h1>
-      <p>If you are not redirected automatically, <a href="/brose-films-production/">click here</a>.</p>
+      <p>If you are not redirected automatically, <a href="/">click here</a>.</p>
     </div>
   </body>
 </html>
