@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/brose-films-production/static/css/main.9405e0b9.css",
-    "main.js": "/brose-films-production/static/js/main.bb771703.js",
+    "main.js": "/brose-films-production/static/js/main.0240d22a.js",
     "static/media/logo.jpg": "/brose-films-production/static/media/logo.ba43cedaf69722499e4b.jpg",
     "static/media/jacobs-trait.jpeg": "/brose-films-production/static/media/jacobs-trait.e686bfcd323b3a5678cb.jpeg",
     "static/media/wrong-right.jpeg": "/brose-films-production/static/media/wrong-right.29d5de0a62a93b1d0b05.jpeg",
@@ -11,10 +11,10 @@
     "static/media/tiktok-icon.svg": "/brose-films-production/static/media/tiktok-icon.dfe0c7bfc2893389e931c3175dff538c.svg",
     "static/media/youtube-icon.svg": "/brose-films-production/static/media/youtube-icon.312923acc2fd41bb930039c39b018168.svg",
     "main.9405e0b9.css.map": "/brose-films-production/static/css/main.9405e0b9.css.map",
-    "main.bb771703.js.map": "/brose-films-production/static/js/main.bb771703.js.map"
+    "main.0240d22a.js.map": "/brose-films-production/static/js/main.0240d22a.js.map"
   },
   "entrypoints": [
     "static/css/main.9405e0b9.css",
-    "static/js/main.bb771703.js"
+    "static/js/main.0240d22a.js"
   ]
 }
