@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import YouTubeIcon from '../../assets/images/youtube-icon.svg';
 import InstagramIcon from '../../assets/images/instagram-icon.svg';
 import TikTokIcon from '../../assets/images/tiktok-icon.svg';
@@ -45,7 +44,7 @@ const Subtitle = styled(motion.p)`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
 
   @media (max-width: 900px) {
@@ -61,70 +60,19 @@ const Card = styled(motion.div)`
   padding: 24px;
 `;
 
-const Field = styled.div`
-  display: grid;
-  margin-bottom: 16px;
-`;
-
-const Label = styled.label`
-  color: #e5e7eb;
-  font-size: 13px;
-  margin-bottom: 6px;
-`;
-
-const Input = styled.input`
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #fff;
-  padding: 12px 14px;
-  border-radius: 10px;
-  outline: none;
-  transition: border-color 200ms ease;
-  &:focus { border-color: rgba(255, 215, 0, 0.6); }
-`;
-
-const Textarea = styled.textarea`
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: #fff;
-  padding: 12px 14px;
-  border-radius: 10px;
-  outline: none;
-  min-height: 140px;
-  resize: vertical;
-  transition: border-color 200ms ease;
-  &:focus { border-color: rgba(255, 215, 0, 0.6); }
-`;
-
-const Row = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  @media (max-width: 520px) { grid-template-columns: 1fr; }
-`;
-
-const Button = styled.button`
-  appearance: none;
-  display: inline-grid;
-  place-items: center;
-  height: 44px;
-  padding: 0 16px;
-  border-radius: 10px;
-  border: 0;
-  color: #0a0a0a;
-  font-weight: 600;
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  cursor: pointer;
-  transition: transform 120ms ease, box-shadow 200ms ease;
-  box-shadow: 0 8px 24px rgba(255, 174, 0, 0.25);
-  &:disabled { opacity: 0.6; cursor: not-allowed; }
-  &:hover { transform: translateY(-1px); }
-`;
-
-const Note = styled.p`
-  color: #9ca3af;
-  font-size: 12px;
-  margin-top: 10px;
+const ContactNote = styled.div`
+  color: #d1d5db;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  
+  p {
+    margin: 0 0 16px;
+  }
+  
+  .highlight {
+    color: #FFD700;
+    font-weight: 600;
+  }
 `;
 
 const InfoItem = styled.div`
@@ -172,9 +120,6 @@ const SocialIcon = styled.img`
 
 const Contact = () => {
   const pageRef = useRef(null);
-  const [form, setForm] = useState({ name: '', email: '', company: '', subject: '', message: '' });
-  const [submitting, setSubmitting] = useState(false);
-  const [feedback, setFeedback] = useState(null);
 
   useEffect(() => {
     const el = pageRef.current;
@@ -190,28 +135,6 @@ const Contact = () => {
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setFeedback(null);
-    try {
-      const { data } = await axios.post(process.env.REACT_APP_API_URL || '/api/contact', form);
-      if (data?.success) {
-        setFeedback({ type: 'success', message: 'Message sent. We\'ll get back to you shortly.' });
-        setForm({ name: '', email: '', company: '', subject: '', message: '' });
-      } else {
-        setFeedback({ type: 'error', message: 'Something went wrong. Please try again.' });
-      }
-    } catch (err) {
-      const msg = err?.response?.data?.error || 'Unable to send message. Please try later.';
-      setFeedback({ type: 'error', message: msg });
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   return (
     <Page>
       <Spotlight ref={pageRef} />
@@ -225,41 +148,21 @@ const Contact = () => {
 
         <Content>
           <Card initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <form onSubmit={onSubmit}>
-              <Row>
-                <Field>
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" value={form.name} onChange={onChange} required placeholder="Jane Doe" />
-                </Field>
-                <Field>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" name="email" value={form.email} onChange={onChange} required placeholder="jane@studio.com" />
-                </Field>
-              </Row>
-
-              <Row>
-                <Field>
-                  <Label htmlFor="company">Company (optional)</Label>
-                  <Input id="company" name="company" value={form.company} onChange={onChange} placeholder="Brose Films" />
-                </Field>
-                <Field>
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" name="subject" value={form.subject} onChange={onChange} placeholder="Commercial, Music Video, Feature..." />
-                </Field>
-              </Row>
-
-              <Field>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" value={form.message} onChange={onChange} required placeholder="Share your brief, goals, references, budget range, and deadlines." />
-              </Field>
-
-              <Button type="submit" disabled={submitting}>{submitting ? 'Sending…' : 'Send Message'}</Button>
-              <Note>By submitting, you agree to our processing your info to respond to your inquiry.</Note>
-
-              {feedback && (
-                <p style={{ marginTop: 12, color: feedback.type === 'success' ? '#86efac' : '#fca5a5' }}>{feedback.message}</p>
-              )}
-            </form>
+            <h3 style={{ marginTop: 0, color: '#fff', marginBottom: '20px' }}>Get In Touch</h3>
+            <ContactNote>
+              <p>
+                We're currently transitioning our contact system to provide you with an even better experience. 
+                In the meantime, please reach out to us directly using any of the methods below.
+              </p>
+              <p>
+                For project inquiries, collaborations, or any questions about our services, 
+                we'd love to hear from you. Our team typically responds within <span className="highlight">1-2 business days</span>.
+              </p>
+              <p>
+                Whether you're looking for commercial work, music videos, documentaries, or creative consulting, 
+                let's discuss how we can bring your vision to life.
+              </p>
+            </ContactNote>
           </Card>
 
           <Card initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.6 }}>
